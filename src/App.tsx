@@ -1,19 +1,9 @@
-import './App.css'
-import AddStudent from './Components/AddStudent'
-import EditStudent from './Components/EditStudent'
-import StudentList from './Components/StudentList'
+import "./App.css";
+// import AddStudent from "./Components/AddStudent";
+// import EditStudent from "./Components/EditStudent";
+// import StudentList from "./Components/StudentList";
+import Layout from "./layout/layout";
 
-function App() {
-  
-
-  return (
-    <>
-     <AddStudent/>
-     <EditStudent/>
-     <StudentList/>
-     <h1>dffggh</h1>
-    </>
-  )
+export default function App() {
+  return <Layout />;
 }
-
-export default App
