@@ -3,6 +3,7 @@
 import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+
 import {
      ColumnDef,
      flexRender,
@@ -13,6 +14,16 @@ import {
      useReactTable,
      getPaginationRowModel,
 } from "@tanstack/react-table";
+import {
+     Sheet,
+     SheetClose,
+     SheetContent,
+     SheetDescription,
+     SheetFooter,
+     SheetHeader,
+     SheetTitle,
+     SheetTrigger,
+} from "@/components/ui/sheet"
 import {
      DropdownMenu,
      DropdownMenuCheckboxItem,
@@ -27,6 +38,9 @@ import {
      TableHeader,
      TableRow,
 } from "@/components/ui/table";
+import { UserPlus } from "lucide-react";
+import AddUser from "../myComponents/AddUser";
+
 
 interface DataTableProps<TData, TValue> {
      columns: ColumnDef<TData, TValue>[];
@@ -137,23 +151,49 @@ export function DataTable<TData, TValue>({
                          </TableBody>
                     </Table>
                </div>
-               <div className="flex items-center justify-end space-x-2 py-4">
-                    <Button
-                         variant="outline"
-                         size="sm"
-                         onClick={() => table.previousPage()}
-                         disabled={!table.getCanPreviousPage()}
-                    >
-                         Previous
-                    </Button>
-                    <Button
-                         variant="outline"
-                         size="sm"
-                         onClick={() => table.nextPage()}
-                         disabled={!table.getCanNextPage()}
-                    >
-                         Next
-                    </Button>
+               <div className="flex items-center  justify-between ">
+                    <div className="p-0 m-0">
+                         <Sheet>
+                              <SheetTrigger asChild>
+                                   <Button>
+                                        <UserPlus />
+                                        Add Student
+                                   </Button>
+                              </SheetTrigger>
+                              <SheetContent>
+                                   <SheetHeader className="pb-5">
+                                        <SheetTitle>Add Student</SheetTitle>
+                                        <SheetDescription>
+                                             Add New Student profile here. Click submit when you're done.
+                                        </SheetDescription>
+                                   </SheetHeader>
+                                   <AddUser />
+                                   <SheetFooter>
+                                        <SheetClose asChild>
+                                        </SheetClose>
+                                   </SheetFooter>
+                              </SheetContent>
+                         </Sheet>
+
+                    </div>
+                    <div className="flex items-center justify-end space-x-2 py-4">
+                         <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => table.previousPage()}
+                              disabled={!table.getCanPreviousPage()}
+                         >
+                              Previous
+                         </Button>
+                         <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => table.nextPage()}
+                              disabled={!table.getCanNextPage()}
+                         >
+                              Next
+                         </Button>
+                    </div>
                </div>
           </div>
 

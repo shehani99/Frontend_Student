@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Student, columns } from "@/components/Table/columns";
 import { DataTable } from "@/components/Table/data-table";
 import { useState, useEffect } from "react";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 async function getData(): Promise<Student[]> {
   return [
@@ -67,6 +68,7 @@ export default function Home() {
           <h1 className="text-red-300xl items-center text-center shadow-lg bg-blue-400">
             Student's Management System
           </h1>
+          <ModeToggle />
           {/* <Button>Click me</Button> */}
         </div>
 

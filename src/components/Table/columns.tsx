@@ -93,7 +93,7 @@ export const columns: ColumnDef<Student>[] = [
                                    <TooltipProvider>
                                         <Tooltip>
                                              <TooltipTrigger>
-                                                  <Button variant="destructive">
+                                                  <Button className="bg-red-500 text-white hover:bg-red-600">
                                                        <Trash2 />
                                                   </Button>
                                              </TooltipTrigger>
