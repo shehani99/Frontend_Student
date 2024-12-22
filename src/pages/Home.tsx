@@ -64,13 +64,14 @@ export default function Home() {
   return (
     <>
       <div className="container">
-        <div className="flex flex-col">
-          <h1 className="text-red-300xl items-center text-center shadow-lg bg-blue-400">
-            Student's Management System
-          </h1>
+
+        <h1 className=" flex items-center justify-center text-4xl mt-4">
+          Student's Management System
+        </h1>
+        <div className="absolute top-4 right-4 mt-2">
           <ModeToggle />
-          {/* <Button>Click me</Button> */}
         </div>
+
 
         <div className="container mt-5 pt-3">
           <Card>

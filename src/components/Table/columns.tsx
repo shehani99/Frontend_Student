@@ -3,6 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal, Trash2, UserCog } from "lucide-react";
 import { Button } from "@/components/ui/button";
+// import { useNavigate } from "react-router-dom";
 import {
      DropdownMenu,
      DropdownMenuContent,
@@ -32,6 +33,7 @@ export type Student = {
 };
 
 export const columns: ColumnDef<Student>[] = [
+
      {
           accessorKey: "id",
           header: "ID",
@@ -60,6 +62,7 @@ export const columns: ColumnDef<Student>[] = [
           id: "actions",
           cell: ({ row }) => {
                const payment = row.original;
+               // const navigate = useNavigate();
 
                return (
                     <DropdownMenu>
